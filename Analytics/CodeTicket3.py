@@ -19,7 +19,7 @@ class InfracoesPorTipoVeiculo(MRJob):
                 # Extrair o tipo de veículo (Vehicle Body Type)
                 tipo_veiculo = fields[6].strip().upper() if fields[6].strip() else "unknown"  # Posição 6 para Vehicle Body Type
                 
-                # Emitir o tipo de veículo (substitui por 'unknown' se estiver ausente/nulo)
+                # Emitir o tipo de veículo (substitui por 'UNKNOWN' se estiver ausente/nulo)
                 yield tipo_veiculo, 1
                 
             except IndexError:
@@ -38,4 +38,3 @@ class InfracoesPorTipoVeiculo(MRJob):
 
 if __name__ == '__main__':
     InfracoesPorTipoVeiculo.run()
-
